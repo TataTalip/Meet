@@ -14,7 +14,9 @@ class CreateMeetsTable extends Migration
     public function up()
     {
         Schema::create('meets', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->string('name');
+            $table->string('cityMeet');
             $table->timestamps();
         });
     }

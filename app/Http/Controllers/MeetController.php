@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\MeetResource;
 use App\Meet;
 use Illuminate\Http\Request;
 
@@ -46,7 +47,8 @@ class MeetController extends Controller
      */
     public function show(Meet $meet)
     {
-        //
+        MeetResource::withoutWrapping();
+        return new MeetResource($meet);
     }
 
     /**
